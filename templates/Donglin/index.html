@@ -1,0 +1,7 @@
+{% extends 'Donglin/base.html' %}
+
+
+{% block MyBody %}
+    <iframe src="{% url 'donglin:dong_ying' page_num=1 %}" id="rightiframe" name="rightiframe"></iframe>
+
+{% endblock %}

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./component/js/JQuery2.1.4.js"></script>
+    <link rel="stylesheet" href="./component/style/components.css">
+    <script src="./component/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/plugins.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/themes.css">
+</head>
+
+<body>
+    <div id="body">
+        <ol class="breadcrumb">
+            <li class="active"><a href="#">系统</a></li>
+            <li>会员列表</li>
+        </ol>
+        <div class="barboxs">
+
+            <button 
+                class="btn btn-success pull-left " 
+                data-toggle="modal" data-target="#myModal"
+                title="" 
+                data-placement="right"
+                data-original-title="添加会员">
+                <i class="fa fa-pencil-square-o"></i>
+            </button>
+
+            <button class="btn btn-danger pull-left ml10" data-toggle="tooltip" title="" data-placement="right" data-original-title="删除会员"><i class="fa fa-trash-o"></i></button>
+
+            <div class="leftbox">
+                <div class="liselect">
+                    <select id="val_skill" name="val_skill" class="form-control ">
+                        <option value="">会员状态</option>
+                        <option value="正常">正常</option>
+                        <option value="未激活">未激活</option>
+                        <option value="禁用">禁用</option>
+                    </select>
+                </div>
+
+                <div class="liselect w300">
+                    <div class="input-group">
+                        <input type="text" id="example-input-typeahead" class="form-control example-typeahead" placeholder="请输入关键词">
+                        <span class="input-group-btn">
+                            <button class="btn btn-success"><i class="fa fa-search"></i></button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tablebox">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th class="text-center" width="50"><input type="checkbox" id="check5-all" name="check5-all"></th>
+                        <th class="text-center">ID</th>
+                        <th>会员账号</th>
+                        <th>会员密码</th>
+                        <th>会员级别</th>
+                        <th>会员类型</th>
+                        <th>会员状态</th>
+                        <th>创建时间</th>
+                        <th class="text-center" width="85"><i class="fa fa-bolt"></i> 操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td class="text-center"><input type="checkbox" id="check5-td1" name="check5-td1"></td>
+                        <td class="cell-small text-center">1</td>
+                        <td>custom_admins</td>
+                        <td>123456789</td>
+                        <td>普通会员</td>
+                        <td>系统会员</td>
+                        <td><span class="label label-success">正常</span></td>
+                        <td>2021-3-22 11:04:49</td>
+                        <td class="text-center">
+                            <div class="btn-group">
+                                <a href="javascript:void(0)" class="btn btn-xs btn-info"><i class="fa fa-globe"></i></a>
+                                <a href="javascript:void(0)" class="btn btn-xs btn-success"><i
+                                        class="fa fa-pencil"></i></a>
+                                <a href="javascript:void(0)" class="btn btn-xs btn-danger"><i
+                                        class="fa fa-trash-o"></i></a>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="text-center"><input type="checkbox" id="check5-td1" name="check5-td1"></td>
+                        <td class="cell-small text-center">1</td>
+                        <td>custom_admins</td>
+                        <td>******</td>
+                        <td>普通会员</td>
+                        <td>网站会员</td>
+                        <td><span class="label label-warning">未激活</span></td>
+                        <td>2021-3-22 11:04:49</td>
+                        <td class="text-center">
+                            <div class="btn-group">
+                                <a href="javascript:void(0)" class="btn btn-xs btn-info"><i class="fa fa-globe"></i></a>
+                                <a href="javascript:void(0)" class="btn btn-xs btn-success"><i
+                                        class="fa fa-pencil"></i></a>
+                                <a href="javascript:void(0)" class="btn btn-xs btn-danger"><i
+                                        class="fa fa-trash-o"></i></a>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="text-center"><input type="checkbox" id="check5-td1" name="check5-td1"></td>
+                        <td class="cell-small text-center">1</td>
+                        <td>custom_admins</td>
+                        <td>******</td>
+                        <td>普通会员</td>
+                        <td>网站会员</td>
+                        <td><span class="label label-danger">禁用</span></td>
+                        <td>2021-3-22 11:04:49</td>
+                        <td class="text-center">
+                            <div class="btn-group">
+                                <a href="javascript:void(0)" class="btn btn-xs btn-info"><i class="fa fa-globe"></i></a>
+                                <a href="javascript:void(0)" class="btn btn-xs btn-success"><i
+                                        class="fa fa-pencil"></i></a>
+                                <a href="javascript:void(0)" class="btn btn-xs btn-danger"><i
+                                        class="fa fa-trash-o"></i></a>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+
+        <div class="fy">
+            <ul class="pagination">
+                <li><a href="javascript:void(0)">上一页</a></li>
+                <li><a href="javascript:void(0)">1</a></li>
+                <li><a href="javascript:void(0)">2</a></li>
+                <li><a href="javascript:void(0)">3</a></li>
+                <li><a href="javascript:void(0)">下一页</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- /* // ****后台页面定制，设计QQ：951252660 */ -->
+    <!-- 000 -->
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">添加会员</h4>
+            </div>
+            <div class="modal-body">
+
+
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">会员名称</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="请输入">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">会员密码</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="请输入">
+                </div>
+
+                <div class="form-group  ">
+                    <label for="exampleInputEmail1">会员状态</label>
+                    <div>
+                        <label class="radio-inline" for="example-radio-inline1">
+                            <input type="radio" id="example-radio-inline1" name="example-radios-inline" value="option1">
+                            正常&emsp;
+                        </label>
+                        <label class="radio-inline" for="example-radio-inline1">
+                            <input type="radio" id="example-radio-inline1" name="example-radios-inline" value="option1">
+                            未激活&emsp;
+                        </label>
+                        <label class="radio-inline" for="example-radio-inline1">
+                            <input type="radio" id="example-radio-inline1" name="example-radios-inline" value="option1">
+                            禁用
+                        </label>
+                    </div>
+                </div>
+               
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-danger" data-dismiss="modal">取消</button>
+                <button class="btn btn-success">创建</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+
+  <!-- 000 -->
+    <script>
+        $('.dropdown-toggle').dropdown();
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+        
+    </script>
+</body>
+
+</html>

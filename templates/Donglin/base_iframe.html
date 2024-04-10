@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <script src="{% static 'Donglin/component/js/JQuery2.1.4.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'Donglin/component/style/components.css' %}">
+    <script src="{% static 'Donglin/component/js/bootstrap.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'Donglin/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'Donglin/css/plugins.css' %}">
+    <link rel="stylesheet" href="{% static 'Donglin/css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'Donglin/css/themes.css' %}">
+    <script src="{% static 'Donglin/component/plugins/laydate/laydate.js' %}"></script>
+    <script src="{% static 'Donglin/component/plugins/layer/layer.js' %}"></script>
+    <script src="{% static 'MyLogin/js/myajax.js' %}"></script>
+    <script src="{% static 'MyLogin/js/search.js' %}"></script>
+
+    {% block MyHead %}
+    {% endblock %}
+</head>
+
+<body>
+    <div id="body" style="height: auto">
+        <ol class="breadcrumb">
+            <li class="active"><a href="#" id="position_name">{{ name }}</a></li>
+            <li>数据</li>
+            <li>第{{ page_num }}页</li>
+        </ol>
+
+{#        <div class="barboxs">#}
+{##}
+{#                <div class="liselect w300">#}
+{#                    <div class="input-group">#}
+{#                        <input name="content" type="text" id="example-input-typeahead" class="form-control example-typeahead"#}
+{#                            placeholder="请输入关键词" src="{% url 'donglin:search'%}">#}
+{#                        <span class="input-group-btn">#}
+{#                            <button id="search" class="btn btn-success" type="submit" onclick="" href="{% url 'donglin:search' %}"><i class="fa fa-search"></i></button>#}
+{#                        </span>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+        </div>
+        <!-- <div class="push">
+            <button class="btn btn-success pull-left"><i class="fa fa-plus"></i> 创建文章</button>
+        </div> -->
+
+      <div class="tablebox">
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        {% for property in properties %}
+                        	<th>{{ property }}</th>
+                        {% endfor %}
+
+                    </tr>
+                </thead>
+                <tbody>
+                     {% if name == "东营"%}
+                        {% for data in datas %}
+                            <tr>
+
+                        	    <td>{{ data.out_pressure }}</td>
+                        	    <td>{{ data.out_flow }}</td>
+                        	    <td>{{ data.out_temperature }}</td>
+                        	    <td>{{ data.detect_time }}</td>
+                          </tr>
+                         {% endfor %}
+
+                     {% elif name == "临邑" %}
+                         {% for data in datas %}
+                            <tr>
+                        	    <td>{{ data.in_pressure }}</td>
+                        	    <td>{{ data.in_flow }}</td>
+                        	    <td>{{ data.in_temperature }}</td>
+                        	    <td>{{ data.detect_time }}</td>
+                          </tr>
+                         {% endfor %}
+
+                     {% elif name == "滨州" %}
+                         {% for data in datas %}
+                            <tr>
+                                <td>{{ data.in_pressure }}</td>
+                        	    <td>{{ data.out_pressure }}</td>
+                        	    <td>{{ data.in_flow }}</td>
+                        	    <td>{{ data.out_flow }}</td>
+                        	    <td>{{ data.in_temperature }}</td>
+                        	    <td>{{ data.out_temperature }}</td>
+                        	    <td>{{ data.detect_time }}</td>
+                          </tr>
+                         {% endfor %}
+
+                     {% elif name == "历史模拟" %}
+                         {% for data in datas %}
+                            <tr>
+
+                        	    <td>{{ data.condition }}</td>
+                        	    <td>{{ data.DY }}</td>
+                        	    <td>{{ data.BZ }}</td>
+                        	    <td>{{ data.LY }}</td>
+                          </tr>
+                         {% endfor %}
+                    {% endif %}
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="fy">
+            <ul class="pagination" style="margin: 0 auto">
+                {% for page in pages %}
+                	<li><a href="{% url 'donglin:dong_ying' page_num=page %}">{{ page }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        $('.dropdown-toggle').dropdown();
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+
+        //日期范围
+        laydate.render({
+        elem: '#date'
+        ,range: true,
+        theme:"#5cb85c"
+        });
+
+        // 删除
+        var delbtn = $('.delbtn');
+        delbtn.click(function () {
+            layer.confirm('您是否真的要删除当前这个文档？删除后将进入回收站', {
+                btn: ['确定', '取消'] //按钮
+            }, function () {
+                layer.msg('删除成功', { icon: 1 });
+            }, function () { });
+        })
+    </script>
+</body>
+
+</html>

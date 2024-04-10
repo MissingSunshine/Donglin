@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./component/js/JQuery2.1.4.js"></script>
+    <link rel="stylesheet" href="./component/style/components.css">
+    <script src="./component/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/plugins.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/themes.css">
+</head>
+
+<body>
+    <div id="body">
+        <ol class="breadcrumb">
+            <li class="active"><a href="#">系统</a></li>
+            <li>管理员列表</li>
+        </ol>
+        <div class="barboxs">
+
+            <button 
+                class="btn btn-success pull-left " 
+                data-toggle="modal" data-target="#myModal"
+                title="" 
+                data-placement="right"
+                data-original-title="添加管理员">
+                <i class="fa fa-pencil-square-o"></i>
+            </button>
+            
+        </div>
+        <div class="tablebox">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th class="text-center">ID</th>
+                        <th>真实姓名</th>
+                        <th>管理员账号</th>
+                        <th>管理员密码</th>
+                        <th>管理员类型</th>
+                        <th>管理员状态</th>
+                        <th>创建时间</th>
+                        <th class="text-center" width="85"><i class="fa fa-bolt"></i> 操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td class="cell-small text-center">1</td>
+                        <td>刘德凯</td>
+                        <td>custom_admins</td>
+                        <td>123456789</td>
+                        <td>超级管理员</td>
+                        <td><span class="label label-success">正常</span></td>
+                        <td>2021-3-22 11:04:49</td>
+                        <td class="text-center">
+                            <div class="btn-group">
+                                <a href="javascript:void(0)" class="btn btn-xs btn-info"><i class="fa fa-globe"></i></a>
+                                <a href="javascript:void(0)" class="btn btn-xs btn-success"><i
+                                        class="fa fa-pencil"></i></a>
+                                <a href="javascript:void(0)" class="btn btn-xs btn-danger"><i
+                                        class="fa fa-trash-o"></i></a>
+                            </div>
+                        </td>
+                    </tr>
+
+                  
+
+                    <tr>
+                        <td class="cell-small text-center">1</td>
+                        <td>刘德凯</td>
+                        <td>custom_admins</td>
+                        <td>******</td>
+                        <td>普通管理员</td>
+                        <td><span class="label label-danger">禁用</span></td>
+                        <td>2021-3-22 11:04:49</td>
+                        <td class="text-center">
+                            <div class="btn-group">
+                                <a href="javascript:void(0)" class="btn btn-xs btn-info"><i class="fa fa-globe"></i></a>
+                                <a href="javascript:void(0)" class="btn btn-xs btn-success"><i
+                                        class="fa fa-pencil"></i></a>
+                                <a href="javascript:void(0)" class="btn btn-xs btn-danger"><i
+                                        class="fa fa-trash-o"></i></a>
+                            </div>
+                        </td>
+                    </tr>
+
+                    
+                </tbody>
+            </table>
+        </div>
+
+        <div class="fy">
+            <ul class="pagination">
+                <li><a href="javascript:void(0)">上一页</a></li>
+                <li><a href="javascript:void(0)">1</a></li>
+                <li><a href="javascript:void(0)">2</a></li>
+                <li><a href="javascript:void(0)">3</a></li>
+                <li><a href="javascript:void(0)">下一页</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <!-- 000 -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">添加管理员</h4>
+            </div>
+            <div class="modal-body">
+
+                    <div class="form-group">
+                    <label for="exampleInputEmail1">真实姓名</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="请输入">
+                </div>
+
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">管理员名称</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="请输入">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">管理员密码</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="请输入">
+                </div>
+
+                <div class="form-group  ">
+                    <label for="exampleInputEmail1">管理员状态</label>
+                    <div>
+                        <label class="radio-inline" for="example-radio-inline1">
+                            <input type="radio" id="example-radio-inline1" name="example-radios-inline" value="option1">
+                            正常&emsp;
+                        </label>
+                        <label class="radio-inline" for="example-radio-inline1">
+                            <input type="radio" id="example-radio-inline1" name="example-radios-inline" value="option1">
+                            禁用
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group mb0 ">
+                    <label for="exampleInputEmail1">管理员类型</label>
+                    <div>
+                        <label class="radio-inline" for="example-radio-inline1">
+                            <input type="radio" id="example-radio-inline1" name="example-radios-inline" value="option1">
+                            超管&emsp;
+                        </label>
+                        <label class="radio-inline" for="example-radio-inline1">
+                            <input type="radio" id="example-radio-inline1" name="example-radios-inline" value="option1">
+                            普管
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-danger" data-dismiss="modal">取消</button>
+                <button class="btn btn-success">创建</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+  <!-- 000 -->
+      <!-- /* // ****222后台页面定制，设计QQ：951252660 */ -->
+    <script>
+        $('.dropdown-toggle').dropdown();
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+        
+    </script>
+</body>
+
+</html>
